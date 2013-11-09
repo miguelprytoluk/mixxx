@@ -3,12 +3,13 @@
 
 class MidiControllerPreset;
 class HidControllerPreset;
+class OscControllerPreset;
 
 class ControllerPresetVisitor {
   public:
     virtual void visit(const MidiControllerPreset* preset) = 0;
     virtual void visit(const HidControllerPreset* preset) = 0;
+    virtual void visit(const OscControllerPreset* preset) = 0;
 };
 
 #endif /* CONTROLLERPRESETVISITOR_H */
-

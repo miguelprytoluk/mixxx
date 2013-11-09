@@ -50,6 +50,12 @@ void MidiController::visit(const HidControllerPreset* preset) {
     // TODO(XXX): throw a hissy fit.
 }
 
+void MidiController::visit(const OscControllerPreset* preset) {
+    Q_UNUSED(preset);
+    qWarning() << "ERROR: Attempting to load an OscControllerPreset to a MidiController!";
+    // TODO(XXX): throw a hissy fit.
+}
+
 bool MidiController::isClockSignal(MidiKey &mappingKey) {
     if ((mappingKey.key & MIDI_SYS_RT_MSG_MASK) == MIDI_SYS_RT_MSG_MASK) {
         return true;
@@ -551,4 +557,3 @@ void MidiController::sendShortMsg(unsigned char status, unsigned char byte1, uns
             (((unsigned int)byte1) << 8) | status;
     send(word);
 }
-

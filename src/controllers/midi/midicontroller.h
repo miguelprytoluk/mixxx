@@ -45,6 +45,7 @@ class MidiController : public Controller {
 
     virtual void visit(const MidiControllerPreset* preset);
     virtual void visit(const HidControllerPreset* preset);
+    virtual void visit(const OscControllerPreset* preset);
 
     bool isClockSignal(MidiKey &mappingKey);
 
